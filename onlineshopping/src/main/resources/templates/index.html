@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Product List</title>
+	</head>
+	<body>
+		<div align="center" >
+			<h1>Product Manager</h1>
+			<div><a href="new">add new product</a></div>
+			
+			<table border="1" cellpadding="10">
+				<thead>
+					<tr>
+						<th>Product Id</th>
+						<th>Product Name</th>
+						<th>Product  Description</th>
+						<th>Product Price</th>
+						<th>Product Type</th>
+						<th>Product Quantity</th>
+						<th>Product Regd Date</th>
+						<th>Product Mfg date</th>
+						<th>Product Exp date</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product : ${listProducts}">
+						<td th:text ="${product.id}">Product Id</td>
+						<td th:text ="${product.prodName}">Product Name</td>
+						<td th:text ="${product.prodDesc}">Product Description</td>
+						<td th:text ="${product.prodPrice}">Product Price</td>
+						<td th:text ="${product.prodType}">Product Type</td>
+						<td th:text ="${product.prodQty}">Product Quantity</td>
+						<td th:text ="${product.prodRegdDate}">Product Regd Date</td>
+						<td th:text ="${product.prodMfgDate}">Product Mfg date</td>
+						<td th:text ="${product.prodExpDate}">Product Exp date</td>
+						<td> 
+							<a th:href="@{'/edit/' + ${product.id}}">Edit</a>
+							&nbsp;&nbsp;
+							<a th:href="@{'/delete/' + ${product.id}}">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

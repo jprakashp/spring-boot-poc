@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Edit Product Page</title>
+	</head>
+	<body>
+		<div align="center">
+			<h1>Edit New Product</h1>
+			<form action="#" method="post" th:action="@{/save}" th:object="${product}">
+				<table cellpadding="10">
+					<tbody>
+						<tr>
+							<td>Product Id: </td>
+							<td><input type="text" th:field="*{id}" readonly="readonly"/></td>
+						</tr>
+						<tr>
+							<td>Product Name: </td>
+							<td><input type="text" th:field="*{prodName}"/></td>
+						</tr>
+						<tr>
+							<td>Product Description: </td>
+							<td><textarea th:field="*{prodDesc}"></textarea></td>
+						</tr>	
+						<tr>
+							<td>Product Type: </td>
+							<td>
+								<input type="radio" th:field="*{prodType}" value="solid"/> Solid
+								<input type="radio" th:field="*{prodType}" value="liquid"/> Liquid
+								<input type="radio" th:field="*{prodType}" value="semi-liquid"/> Semiliquid
+							</td>
+						</tr>						
+						<tr>
+							<td>Product Price: </td>
+							<td><input type="text" th:field="*{prodPrice}"/></td>
+						</tr>						
+						<tr>
+							<td>Product Quantity: </td>
+							<td><input type="text" th:field="*{prodQty}"/></td>
+						</tr>						
+						<tr>
+							<td>Product Regd Date: </td>
+							<td><input type="date" th:field="*{prodRegdDate}"/></td>
+						</tr>						
+						<tr>
+							<td>Product Mfg Date: </td>
+							<td><input type="date" th:field="*{prodMfgDate}"/></td>
+						</tr>						
+						<tr>
+							<td>Product Exp Date: </td>
+							<td><input type="date" th:field="*{prodExpDate}"/></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button type="submit"/>Submit</button></td>
+						</tr>						
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
